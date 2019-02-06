@@ -3,28 +3,31 @@ package com.example.cinedomeprog;
 import com.google.gson.annotations.SerializedName;
 
 public class Movie {
-    @SerializedName("title")
+
+    private static final String PATH = "movieShowtimes/onShow/movie/";
+
+    @SerializedName(PATH + "title")
     private String title;
 
-    @SerializedName("castingShort/directors")
+    @SerializedName(PATH + "castingShort/directors")
     private String directors;
 
-    @SerializedName("castingShort/actors")
+    @SerializedName(PATH + "castingShort/actors")
     private String actors;
 
-    @SerializedName("release/releaseDate")
+    @SerializedName(PATH + "release/releaseDate")
     private String releaseDate;
 
-    @SerializedName("runtime")
+    @SerializedName(PATH + "runtime")
     private int runtime;
 
-    @SerializedName("genre/name")
+    @SerializedName(PATH + "genre/name")
     private String genre;
 
-    @SerializedName("poster/href")
+    @SerializedName(PATH + "poster/href")
     private String posterPath;
 
-    @SerializedName("trailer/href")
+    @SerializedName(PATH + "trailer/href")
     private String trailerPath;
 
 
