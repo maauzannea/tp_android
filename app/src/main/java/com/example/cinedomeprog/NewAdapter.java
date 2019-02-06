@@ -6,17 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.cinedomeprog.classesCinema.Cinema;
+import com.example.cinedomeprog.classesCinema.Movie;
+import com.example.cinedomeprog.classesCinema.MovieShowtimes;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder>{
 
     private Context context;
 
-    private List<Movie> movieList;
+    private Cinema cinema;
 
-    public NewAdapter(Context context, List<Movie> movieList){
+    public NewAdapter(Context context, Cinema cinema){
         this.context = context;
-        this.movieList =  movieList;
+        this.cinema = cinema;
     }
 
     @Override
@@ -27,12 +32,16 @@ public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder>{
 
     @Override
     public void onBindViewHolder(NewsViewHolder holder, int position) {
-        Movie movie = movieList.get(position);
-        holder.title.setText(movie.getTitle());
+        List<MovieShowtimes> movieShowtimes = cinema.movieShowtimes;
+        Movie movie = movieShowtimes.get(position).onShow.movie;
+        String display = movieShowtimes.get(position).display;
+        holder.title.setText(movie.title);
+        holder.showTime.setText(display);
+        Picasso.with(context).load(movie.poster.href).into(holder.poster);
     }
 
     @Override
     public int getItemCount() {
-        return movieList.size();
+        return cinema.movieShowtimes.size();
     }
 }

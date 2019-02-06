@@ -6,12 +6,33 @@
     android:orientation="vertical"
     android:padding="6dp">
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_column="0" />
+
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/this_is_the_first_post"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </GridLayout>
+
     <TextView
-        android:id="@+id/post_title"
+        android:id="@+id/showtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:text="@string/this_is_the_first_post"
         android:textStyle="bold"
         android:textSize="14sp"/>
 

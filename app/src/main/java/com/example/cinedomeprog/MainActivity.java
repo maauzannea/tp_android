@@ -3,9 +3,8 @@ package com.example.cinedomeprog;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.cinedomeprog.classesCinema.Cinema;
 import com.example.cinedomeprog.retro.ApiUtil;
-
-import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,21 +28,21 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-        ApiUtil.getServiceClass().getAllMovies().enqueue(new Callback<List<Movie>>() {
+        ApiUtil.getServiceClass().getAllMovies().enqueue(new Callback<Cinema>() {
             @Override
-            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
+            public void onResponse(Call<Cinema> call, Response<Cinema> response) {
                 if(response.isSuccessful()){
-                    List<Movie> postList = response.body();
-                    Log.d(TAG, "Returned count " + postList.size());
-                    NewAdapter adapter = new NewAdapter(getApplicationContext(), postList);
+                    Cinema cinema = response.body();
+                    Log.d(TAG, "Returned count " + cinema.movieShowtimes.size());
+                    NewAdapter adapter = new NewAdapter(getApplicationContext(), cinema);
                     recyclerView.setAdapter(adapter);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Movie>> call, Throwable t) {
+            public void onFailure(Call<Cinema> call, Throwable t) {
                 //showErrorMessage();
-                Log.d(TAG, "error loading from API");
+                Log.e(TAG, "error loading from API", t);
             }
         });
     }
