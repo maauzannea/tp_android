@@ -1,5 +1,7 @@
 package com.example.cinedomeprog.classesCinema;
 
-public class OnShow {
+import java.io.Serializable;
+
+public class OnShow implements Serializable {
     public Movie movie;
 }

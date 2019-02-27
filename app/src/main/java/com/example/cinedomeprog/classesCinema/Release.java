@@ -1,5 +1,7 @@
 package com.example.cinedomeprog.classesCinema;
 
-public class Release {
+import java.io.Serializable;
+
+public class Release implements Serializable {
     public String releaseDate;
 }

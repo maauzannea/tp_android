@@ -1,5 +1,7 @@
 package com.example.cinedomeprog.classesCinema;
 
-public class Poster {
+import java.io.Serializable;
+
+public class Poster implements Serializable {
     public String href;
 }

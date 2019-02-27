@@ -1,8 +1,9 @@
 package com.example.cinedomeprog.classesCinema;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Serializable {
     public String title;
     public CastingShort castingShort;
     public Release release;

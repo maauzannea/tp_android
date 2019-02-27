@@ -1,6 +1,8 @@
 package com.example.cinedomeprog.classesCinema;
 
-public class Genre {
+import java.io.Serializable;
+
+public class Genre implements Serializable {
     public int code;
     public String name;
 }

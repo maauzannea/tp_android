@@ -30,7 +30,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder>{
     @Override
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
-        return new NewsViewHolder(view);
+        return new NewsViewHolder(context, view);
     }
 
     @Override
@@ -38,6 +38,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder>{
         String pressRatingString, userRatingString;
         List<MovieShowtimes> movieShowtimes = cinema.movieShowtimes;
         Movie movie = movieShowtimes.get(position).onShow.movie;
+        holder.setMovie(movieShowtimes.get(position));
         String display = movieShowtimes.get(position).display;
         int durationHours = movie.runtime / 3600;
         int durationMinutes = (movie.runtime / 60) % 60;
