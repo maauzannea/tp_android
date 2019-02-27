@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Cinema> call, Response<Cinema> response) {
                 if(response.isSuccessful()){
                     Cinema cinema = response.body();
-                    Log.d(TAG, "Returned count " + cinema.movieShowtimes.size());
+                    if (cinema != null) {
+                        Log.d(TAG, "Returned count " + cinema.movieShowtimes.size());
+                    }
                     NewAdapter adapter = new NewAdapter(getApplicationContext(), cinema);
                     recyclerView.setAdapter(adapter);
                 }

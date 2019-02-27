@@ -26,7 +26,38 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/duration_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/this_is_the_first_post"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/press_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/press_rating_string"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/user_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/user_rating_string"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/showtime"

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">CineDomeProg</string>
     <string name="this_is_the_first_post">This is the first post</string>
+    <string name="press_rating_string">Note de la presse : </string>
+    <string name="user_rating_string">Note des spectateurs : </string>
 </resources>
