@@ -5,6 +5,6 @@
     <string name="user_rating_string">Note des spectateurs : </string>
     <string name="button_video_string">Lien vers la bande-annonce</string>
     <string name="release_date_string">Date de sortie : </string>
-    <string name="director_string">Directeur : </string>
+    <string name="director_string">Réalisateur : </string>
     <string name="actors_string">Acteurs : </string>
 </resources>
